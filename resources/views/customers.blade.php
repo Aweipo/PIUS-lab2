@@ -1,10 +1,21 @@
-@extends('layouts.app')
+@extends('layouts.template')
 
 @section('title', 'Customers')
 
 @section('content')
+
+    <form method="GET" >
+    <div>
+        <label>
+            Filter 1
+        </label>
+        <input type = "text">
+    </div>
+    <button type="submit"> confirm </button>
+    </form>
+
     <h1>Customers</h1>
-    <table id="myTable">
+    <table id="T1">
         <tr>
             <th>Id</th>
             <th>Title</th>
@@ -14,9 +25,9 @@
             <th>Author</th>
         </tr>
 
-            @foreach ($customer as $customers)
+            @foreach ($customers as $customer)
                 <tr>
-                <td>{{$ustomer->id}}</td>
+                <td>{{$customer->id}}</td>
                 <td>{{$customer->name}}</td>
                 <td>{{$customer->is_blocked}}</td>
                 <td>{{$customer->surname}}</td>
@@ -24,7 +35,5 @@
                 <td>{{$customer->phone}}</td>
                 </tr>
             @endforeach
-
     </table>
-    {{$posts->links()}}
 @endsection
