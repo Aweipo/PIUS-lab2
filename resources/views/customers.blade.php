@@ -7,9 +7,40 @@
     <form method="GET" >
     <div>
         <label>
-            Filter 1
+            Покупатель заблокирован
         </label>
-        <input type = "text">
+        <input id = "is_blocked_filter" name="isBlocked" type = "checkbox" value="{{$isBlocked}}">
+    </div>
+    <button type="submit"> confirm </button>
+    </form>
+
+    <form method="GET" >
+    <div>
+        <label>
+            Почта покупателя
+        </label>
+        <input type = "text" id = "email_filter" name="email" placeholder="Email" value="{{$email}}">
+    </div>
+    <button type="submit"> confirm </button>
+    </form>
+
+    <form method="GET" >
+    <div>
+        <label>
+        Телефон покупателя
+        </label>
+        <input type = "text" id = "phone_filter" name = 'phone' placeholder="Phone" value="{{$phone}}">
+    </div>
+    <button type="submit"> confirm </button>
+    </form>
+
+    <form method="GET" >
+    <div>
+        <label>
+        Поиск по имени и фамилии
+        </label>
+        <input type = "text" id = "name"  name="name" placeholder="Name" value="{{$name}}">
+        <input type = "text" id = "surname" name="surname" placeholder="Surname" value="{{$surname}}">
     </div>
     <button type="submit"> confirm </button>
     </form>
@@ -18,11 +49,11 @@
     <table id="T1">
         <tr>
             <th>Id</th>
-            <th>Title</th>
-            <th>Code</th>
-            <th>Contents</th>
-            <th>created_at</th>
-            <th>Author</th>
+            <th>Name</th>
+            <th>Is blocked</th>
+            <th>Surname</th>
+            <th>Email</th>
+            <th>Phone</th>
         </tr>
 
             @foreach ($customers as $customer)
@@ -36,4 +67,5 @@
                 </tr>
             @endforeach
     </table>
+    {{$customers->links()}}
 @endsection

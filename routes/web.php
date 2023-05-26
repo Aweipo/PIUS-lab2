@@ -13,9 +13,10 @@ use Illuminate\Support\Facades\Route;
 |
 */                      
 use App\Http\Controllers\CustomersController;
+use App\Http\Controllers\CustomerController;
 
 Route::get('/', function () {
     return view('welcome');
 });
 Route::get('/customers',[CustomersController::class, 'customers']);
-Route::get('/customers/{id}', [CustomersController::class, 'customer']);
+Route::get('/customers/{id}', [CustomerController::class, 'customer']);

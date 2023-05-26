@@ -1,30 +1,18 @@
-@extends('layouts.app')
+@extends('layouts.template')
 
 @section('title', 'Customers')
 
 @section('content')
-    <h1>Customers</h1>
-    <table id="myTable">
-        <tr>
-            <th>Id</th>
-            <th>Title</th>
-            <th>Code</th>
-            <th>Contents</th>
-            <th>created_at</th>
-            <th>Author</th>
-        </tr>
-
-            @foreach ($customer as $customers)
-                <tr>
-                <td>{{$ustomer->id}}</td>
-                <td>{{$customer->name}}</td>
-                <td>{{$customer->is_blocked}}</td>
-                <td>{{$customer->surname}}</td>
-                <td>{{$customer->email}}</td>
-                <td>{{$customer->phone}}</td>
-                </tr>
-            @endforeach
-
-    </table>
-    {{$posts->links()}}
+<div> <h1>Customer {{$customer->id}}</h1></div>
+<div> {{$customer->is_blocked}}</div>
+<div> {{$customer->name}}</div>
+<div> {{$customer->surname}}</div>
+<div> {{$customer->email}}</div>
+<div> {{$customer->phone}}</div>
+<div> <h2>Adresses</h2></div>
+<div>     
+    @foreach ($adresses as $adress)
+        <h3>{{$adress->custom_name}} | {{$adress->city}} | {{$adress->street}} | {{$adress->building}}  | {{$adress->intercom_key}} | {{$adress->floor}} | {{$adress->apartment}}</h3>
+    @endforeach
+</div>
 @endsection
