@@ -19,9 +19,9 @@ return new class extends Migration
             $table->string('city');
             $table->string('street');
             $table->string('building');
+            $table->string('intercom_key')->nullable();
             $table->string('floor');
             $table->string('apartment');
-            $table->string('intercom_key')->nullable();
             $table->unsignedBigInteger('customer_id');
             $table->foreign('customer_id')->references('id')->on('customers')->cascadeOnDelete();
             $table->timestamps();

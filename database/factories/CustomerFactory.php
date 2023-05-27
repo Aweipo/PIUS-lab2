@@ -20,8 +20,8 @@ class CustomerFactory extends Factory
             'name' => $this->faker->firstName(),
             'is_blocked' => $this->faker->boolean(),
             'surname' => $this->faker->lastName(),
-            'phone' => $this->faker->phoneNumber(),
             'email' => $this->faker->email(),
+            'phone' => $this->faker->phoneNumber(),
         ];
     }
 }

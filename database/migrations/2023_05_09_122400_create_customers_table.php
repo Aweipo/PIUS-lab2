@@ -18,8 +18,8 @@ return new class extends Migration
             $table->string('name');
             $table->boolean('is_blocked');
             $table->string('surname');
-            $table->string('phone')->unique();
             $table->string('email')->unique();
+            $table->string('phone')->unique();
             $table->timestamps();
         });
     }
